@@ -1,0 +1,28 @@
+<h1>Sign In</h1>
+<form style="color:black" name="userInput" novalidate>
+  <input type="text" name="name" minlength=4 required placeholder="Enter-Name" ng-model="signInCtrl.user.name">
+  <span ng-if="(userInput.name.$error.minlength ||
+    userInput.name.$error.required) && userInput.name.$touched">
+    Please Enter Name and it would be greater then 3 words</span>
+  <br>
+  <input type="email" name="email" required placeholder="Enter-Email" ng-model="signInCtrl.user.email">
+  <span ng-if="(userInput.email.$invalid) && userInput.email.$touched">
+    Please Enter email and it will be in form abc@xyz.com</span>
+
+  <br><input type="text" name="phone" ng-model="signInCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required placeholder="Enter phone number" value="">
+  <span ng-if="userInput.phone.$invalid && userInput.phone.$touched">
+    Phone must be in the format ###-###-####.
+  </span>
+  <br><input type="text" ng-model="signInCtrl.dish" style="width:250px" required placeholder="Enter Favourite Dish short name" value="">
+  <span ng-if="signInCtrl.dishname">DishName is invalid</span>
+  <br>
+  <button ng-disabled="userInput.$invalid" ng-click="signInCtrl.submit()">Submit</button>
+
+<h1 ng-if="signInCtrl.sucess">Thankyou for submiting your feedback.</h1>
+  <!--
+<br> <input type="email" name="name" required placeholder="Enter-Email" value="user.email">
+   <span ng-if="userInput.name.$error.minlength || userInput.name.$error.required && userInput.name.$touched "></span>
+  <br><input type="text" name="name" required placeholder="Enter phone number" value="">
+  <br><input type="text" name="name" required placeholder="Enter Favoruite Dish" value="">
+  <br><button type="button" name="button">Submit</button> -->
+</form>

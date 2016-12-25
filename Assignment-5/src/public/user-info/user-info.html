@@ -1,0 +1,14 @@
+<h1>User Info</h1>
+<div ng-if="userInfoCtrl.link" class="">
+  <h4 >No user info is provided</h4>
+  <a ui-sref="public.signin">Click on link to submit login</a>
+</div>
+
+<div class="" ng-if="userInfoCtrl.data">
+
+  <h3>FavouriteDish : {{userInfoCtrl.userdata.dishName}}</h3>
+  <h3>Name : {{userInfoCtrl.userdata.name}}</h3>
+  <h3>Email : {{userInfoCtrl.userdata.email}}</h3>
+  <h3>Phone: {{userInfoCtrl.userdata.phone}}</h3>
+
+</div>
